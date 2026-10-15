@@ -13,7 +13,7 @@ public class EnemySpanwer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnIntervalTimer += Time.deltaTime;
+        spawnIntervalTimer -= Time.deltaTime;
        if (spawnIntervalTimer <= 0)
        {
            Instantiate(enemyPrefab, transform.position, transform.rotation);

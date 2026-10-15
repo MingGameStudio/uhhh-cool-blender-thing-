@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemySprict : MonoBehaviour
 {
-    public Vector3 speed = new Vector3(3, 0, 1);
+    public float speed = 10.0f;
     public EnemyPath enemyPath;
     int currPointIndex = 0;
 
@@ -22,12 +22,13 @@ public class EnemySprict : MonoBehaviour
             if (castle != null)
             {
                 castle.TakeDamage(10); // Example damage value
-            }
+                Destroy(gameObject); // Destroy the enemy after it reaches the castle
+			}
             return;
         }
         Transform targetPoint = enemyPath.pathPoints[currPointIndex];
-        speed = (targetPoint.position - transform.position).normalized * 1.0f; 
-        transform.Translate(speed * Time.deltaTime);
+        Vector3 direction = (targetPoint.position - transform.position).normalized;
+        transform.Translate(direction * speed * Time.deltaTime);
         float distanceToTarget = Vector3.Distance(transform.position, targetPoint.position);
         if (distanceToTarget < 0.1f)
         {

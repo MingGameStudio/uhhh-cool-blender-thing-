@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91795694004d047049151360d60d9128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySprict
-  speed: {x: 3, y: 0, z: 1}
+  speed: {x: 30, y: 0, z: 1}
   enemyPath: {fileID: 0}
 --- !u!1001 &6334866634605579653
 PrefabInstance:
